@@ -1,0 +1,70 @@
+[
+  {
+    "id": 1,
+    "title": "Gorra casual",
+    "description": "Gorra unisex para complementar tu estilo urbano.",
+    "code": "GORRA202",
+    "price": 3000,
+    "status": true,
+    "stock": 75,
+    "category": "accesorios",
+    "thumbnails": [
+      "images/gorra1.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Camiseta deportiva",
+    "description": "Camiseta de tela transpirable para actividades físicas.",
+    "code": "CAMIS101",
+    "price": 4000,
+    "status": true,
+    "stock": 150,
+    "category": "ropa",
+    "thumbnails": [
+      "images/camiseta1.jpg",
+      "images/camiseta2.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Mochila urbana",
+    "description": "Mochila versátil y cómoda para el uso diario.",
+    "code": "MOCH789",
+    "price": 8000,
+    "status": true,
+    "stock": 200,
+    "category": "accesorios",
+    "thumbnails": [
+      "images/mochila1.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Botines de fútbol",
+    "description": "Botines de alta calidad para jugadores profesionales y aficionados.",
+    "code": "BOT456",
+    "price": 18000,
+    "status": true,
+    "stock": 50,
+    "category": "deportes",
+    "thumbnails": [
+      "images/botines1.jpg",
+      "images/botines2.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Zapatillas deportivas",
+    "description": "Zapatillas ideales para correr y actividades deportivas.",
+    "code": "RUN123",
+    "price": 15000,
+    "status": true,
+    "stock": 50,
+    "category": "deportes",
+    "thumbnails": [
+      "images/zapatillas1.jpg",
+      "images/zapatillas2.jpg"
+    ]
+  }
+]
