@@ -1,79 +1,111 @@
-# Proyecto Backend con Node.js y Express
+# Backend con Express, Handlebars y Websockets
 
-Este proyecto es una API para gestionar productos y carritos de compra utilizando Node.js, Express y almacenamiento en archivos JSON.
+## 📌 Descripción
 
-## 🚀 Instalación y Configuración
+Este proyecto es un servidor backend construido con **Node.js**, **Express**, **Handlebars** y **Websockets**. Permite gestionar productos y carritos de compras con persistencia en archivos JSON.
 
-### 1️⃣ Clonar el repositorio
-```bash
+---
+
+## 🚀 Instalación
+
+### **1️⃣ Clonar el repositorio**
+
+```sh
 git clone https://github.com/ruizdiaz34/Backend72855.git
-cd backend__server
+cd Backend72855
 ```
 
-### 2️⃣ Instalar dependencias
-```bash
+### **2️⃣ Instalar dependencias**
+
+```sh
 npm install
 ```
 
-### 3️⃣ Ejecutar el servidor
-```bash
+### **3️⃣ Ejecutar el servidor**
+
+```sh
 npm start
 ```
-El servidor correrá en `http://localhost:8081/`.
+
+El servidor se ejecutará en:\
+🔗 `http://localhost:8081`
 
 ---
-## 📌 Rutas Disponibles
 
-### 📦 **Productos**
+## 📁 Estructura del Proyecto
 
-- `GET /api/products` → Devuelve todos los productos.
-- `GET /api/products/:pid` → Devuelve un producto por ID.
-- `POST /api/products` → Crea un producto nuevo (requiere JSON con `title`, `description`, `code`, `price`, `stock`, `category`, `thumbnails`).
-- `PUT /api/products/:pid` → Modifica un producto (excepto su ID).
-- `DELETE /api/products/:pid` → Elimina un producto por ID.
-
-### 🛒 **Carritos**
-
-- `POST /api/carts` → Crea un carrito vacío.
-- `GET /api/carts/:cid` → Devuelve los productos de un carrito por ID.
-- `POST /api/carts/:cid/product/:pid` → Agrega un producto a un carrito.
-
----
-## 🧪 Pruebas con Postman
-
-1️⃣ Abrir **Postman**.
-2️⃣ Usar las rutas mencionadas con métodos `GET`, `POST`, `PUT` y `DELETE`.
-3️⃣ Enviar JSON en `POST` y `PUT`, ejemplo:
-```json
-{
-  "title": "Zapatillas Nike",
-  "description": "Zapatillas deportivas",
-  "code": "NK123",
-  "price": 20000,
-  "stock": 15,
-  "category": "Deportivo",
-  "thumbnails": ["img1.jpg", "img2.jpg"]
-}
 ```
-
----
-## 📜 Estructura del Proyecto
-```
-backend-server/
+Backend72855/
 │── src/
 │   ├── managers/
-│   │   ├── ProductManager.js  # Lógica de productos
-│   │   ├── CartManager.js     # Lógica de carritos
+│   │   ├── ProductManager.js
+│   │   ├── CartManager.js
 │   ├── routes/
-│   │   ├── productsRouter.js  # Rutas de productos
-│   │   ├── cartsRouter.js     # Rutas de carritos
-│   ├── server.js             # Configuración del servidor
-│── data/
-│   ├── products.json         # Base de datos de productos
-│   ├── carts.json            # Base de datos de carritos
-│── package.json
-│── README.md
+│   │   ├── productsRouter.js
+│   │   ├── cartsRouter.js
+│   │   ├── viewsRouter.js
+│   ├── views/
+│   │   ├── layouts/
+│   │   │   ├── main.handlebars
+│   │   ├── index.handlebars
+│   │   ├── realTimeProducts.handlebars
+│   ├── public/
+│   │   ├── js/
+│   │   │   ├── realTimeProducts.js
+│   ├── app.js
+│   ├── server.js
+├── package.json
+├── README.md
 ```
 
 ---
+
+## 🔥 Funcionalidades
+
+### \*\*Productos (`/api/products`)
+
+✅ Listar todos los productos (`GET /`) ✅ Obtener un producto por ID (`GET /:pid`) ✅ Agregar un nuevo producto (`POST /`) ✅ Actualizar un producto (`PUT /:pid`) ✅ Eliminar un producto (`DELETE /:pid`)
+
+### \*\*Carrito (`/api/carts`)
+
+✅ Crear un carrito (`POST /`) ✅ Listar productos de un carrito (`GET /:cid`) ✅ Agregar un producto a un carrito (`POST /:cid/product/:pid`)
+
+### **Handlebars & Websockets**
+
+✅ **Vistas con Handlebars**:
+
+- `http://localhost:8081/products` → Muestra todos los productos.
+- `http://localhost:8081/realtimeproducts` → Lista de productos en tiempo real.
+
+✅ **Actualización en tiempo real con WebSockets**:
+
+- Cuando se agrega o elimina un producto, la vista `/realtimeproducts` se actualiza sin necesidad de recargar la página.
+
+✅ **Formulario para agregar productos** en `/realtimeproducts`. ✅ **Botón de eliminación** para eliminar productos desde la vista en tiempo real.
+
+---
+
+## 💡 Cómo probar WebSockets
+
+1️⃣ Abre dos pestañas en el navegador:
+
+- `http://localhost:8081/realtimeproducts` 2️⃣ Agrega un producto desde el formulario en esa vista. 3️⃣ Observa cómo la lista se actualiza automáticamente.
+
+---
+
+## 🛠 Tecnologías utilizadas
+
+- **Node.js** + **Express.js**
+- **Handlebars** para vistas dinámicas
+- **Socket.io** para WebSockets
+- **File System** para persistencia de datos
+
+---
+
+### 📌 **Autor**
+
+[ruizdiaz34](https://github.com/ruizdiaz34)
+
+---
+
 
